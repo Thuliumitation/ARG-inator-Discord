@@ -1,0 +1,6 @@
+.env
+python_to_bf/
+InventWithPython/
+.idea/
+_pycache_/
+venv/
