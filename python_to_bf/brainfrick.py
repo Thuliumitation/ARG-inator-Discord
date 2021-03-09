@@ -1,6 +1,4 @@
 
-#https://github.com/yiangos/python-text-to-brainfuck/blob/master/BFGenerator.py
-
 class BFGenerator(object):
     """Takes a string and generates a brainfuck code that, when run,
        prints the original string to the brainfuck interpreter standard
