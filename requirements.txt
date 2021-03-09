@@ -4,3 +4,4 @@ brainfuck-interpreter
 pyconverter
 textwrap3
 python-dotenv
+pyperclip
