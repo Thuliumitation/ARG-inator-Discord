@@ -3,7 +3,7 @@ from discord.ext import commands
 import base64 as b64
 import string
 from resources import morse_dict
-from InventWithPython import vigenereCipher
+from InventWithPython import vigenereCipher, transpositionEncrypt
 from python_to_bf import brainfrick
 import pyconverter
 import textwrap
