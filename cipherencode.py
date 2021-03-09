@@ -247,6 +247,21 @@ class CipherEncode(commands.Cog):
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
             await ctx.send(embed=e)
+           
+    @encode.command(aliases=['rf','railfence'])
+    async def transposition(self,ctx,text,key:int):
+        try:
+            result = transpositionEncrypt(key, text)  # I freaking gave up on my manual code
+            e = discord.Embed(title="Transposition Cipher decoder",
+                              color=discord.Color.green())
+            e.add_field(name='Result:', value=result)
+            e.set_footer(text=f'Requested by: {ctx.author}')
+            await ctx.send(embed=e)
+        except:
+            e = discord.Embed(title='Oops!',
+                              description="Sorry we couldn't encode your text :(",
+                              color=discord.Color.red())
+            await ctx.send(embed=e)
 
     @encode.command(aliases=['r47'])
     async def rot47(self, ctx, *, text):
