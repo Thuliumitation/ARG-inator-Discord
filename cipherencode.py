@@ -218,8 +218,8 @@ class CipherEncode(commands.Cog):
     async def morse(self, ctx, *, text):
         try:
             result = ""
-            for i in text.split(" "):
-                result += morse_dict.get(i)
+            for i in text.upper():
+                result += morse_dict.get(i) + ' '
             e = discord.Embed(title="Morse Code encoder",
                               color=discord.Color.green())
             e.add_field(name="Result: ",
