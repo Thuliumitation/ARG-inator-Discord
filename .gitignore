@@ -4,3 +4,4 @@ InventWithPython/
 .idea/
 __pycache__/
 venv/
+pyperclip.py
