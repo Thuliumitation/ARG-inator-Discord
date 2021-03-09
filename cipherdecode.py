@@ -257,7 +257,7 @@ class CipherDecode(commands.Cog):
     @decode.command(aliases=['rf','railfence'])
     async def transposition(self,ctx,text,key:int):
         try:
-            result = transpositionEncrypt(key, text)  # I freaking gave up on my manual code
+            result = transpositionDecrypt.decryptMessage(key, text)  # I freaking gave up on my manual code
             e = discord.Embed(title="Transposition Cipher decoder",
                               color=discord.Color.green())
             e.add_field(name='Result:', value=result)
