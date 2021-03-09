@@ -31,8 +31,7 @@ def decryptMessage(key, message):
     # Each string in plaintext represents a column in the grid.
     plaintext = [''] * numOfColumns
 
-    # The col and row variables point to where in the grid the next
-    # character in the encrypted message will go.
+    # The col and row variables point to where in the grid the nextcharacter in the encrypted message will go.
     col = 0
     row = 0
 
