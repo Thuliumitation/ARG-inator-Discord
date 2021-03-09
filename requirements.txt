@@ -2,4 +2,4 @@ discord.py
 discord
 brainfuck-interpreter
 pyconverter
-textwrap
+textwrap3
