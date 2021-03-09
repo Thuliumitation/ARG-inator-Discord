@@ -251,7 +251,7 @@ class CipherEncode(commands.Cog):
            
     @encode.command(aliases=['rf','railfence'])
     async def transposition(self,ctx,text,key:int):
-        result = transpositionEncrypt(key, text)  # I freaking gave up on my manual code
+        result = transpositionEncrypt.encryptMessage(key, text)  # I freaking gave up on my manual code
         e = discord.Embed(title="Transposition Cipher encoder",
                           color=discord.Color.green())
         e.add_field(name='Result:', value=result)
