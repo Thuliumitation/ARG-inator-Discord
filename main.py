@@ -1,7 +1,9 @@
 import discord
 from discord.ext import commands
 import os
-token = os.environ('TOKEN')
+from dotenv import load_dotenv
+load_dotenv()
+token = os.getenv('TOKEN')
 client = commands.Bot(command_prefix='>',intents=discord.Intents.all(),help_command=None)
 
 @client.event
