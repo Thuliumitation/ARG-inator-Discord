@@ -31,6 +31,7 @@ class CipherDecode(commands.Cog):
             e.add_field(name="Octal (oct)", value='>decode oct <text>')
             e.add_field(name="Rot47 (r47)", value='>decode rot47 <text>')
             e.add_field(name="Monoalphabetic Substitution (mono)", value='>decode mono <text>')
+            e.add_field(name="Transposition (railfence)", value=">decode rf <'text'>")
             e.add_field(name="Vigenère (v)", value=">decode vigenere <'text'> <'key'>")
             await ctx.send(embed=e)
         else:
@@ -252,7 +253,22 @@ class CipherDecode(commands.Cog):
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
             await ctx.send(embed=e)
-
+    
+    @decode.command(aliases=['rf','railfence'])
+    async def transposition(self,ctx,text,key:int):
+        try:
+            result = transpositionEncrypt(key, text)  # I freaking gave up on my manual code
+            e = discord.Embed(title="Transposition Cipher decoder",
+                              color=discord.Color.green())
+            e.add_field(name='Result:', value=result)
+            e.set_footer(text=f'Requested by: {ctx.author}')
+            await ctx.send(embed=e)
+        except:
+            e = discord.Embed(title='Oops!',
+                              description="Sorry we couldn't decode your text :(",
+                              color=discord.Color.red())
+            await ctx.send(embed=e)
+    
     @decode.command(aliases=['r47'])
     async def rot47(self, ctx, *, text):
         try:
