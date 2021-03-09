@@ -1,0 +1,5 @@
+discord.py
+discord
+brainfuck-interpreter
+pyconverter
+textwrap
