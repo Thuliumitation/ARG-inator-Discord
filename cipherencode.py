@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import base64 as b64
 import string
-from resources import morse_dict
+from resources import morse_dict, nato_dict
 from InventWithPython import vigenereCipher, transpositionEncrypt
 from python_to_bf import brainfrick
 import pyconverter
@@ -30,6 +30,7 @@ class CipherEncode(commands.Cog):
             e.add_field(name="Decimal (dec)", value='>encode dec <text>')
             e.add_field(name="Hexadecimal (hex)", value='>encode hex <text>')
             e.add_field(name="Morse Code (mc)", value='>encode morse <text>')
+            e.add_field(name="NATO Phonetic Alphabet (nato)", value='>encode nato <text>')
             e.add_field(name="Octal (oct)", value='>encode oct <text>')
             e.add_field(name="Rot47 (r47)", value='>encode rot47 <text>')
             e.add_field(name="Monoalphabetic Substitution (mono)", value='>encode mono <text>')
@@ -232,7 +233,25 @@ class CipherEncode(commands.Cog):
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
             await ctx.send(embed=e)
-
+            
+    @encode.command(aliases=['mc'])
+    async def morse(self, ctx, *, text):
+        try:
+            result = ""
+            for i in text.upper():
+                result += nato_dict.get(i) + ' '
+            e = discord.Embed(title="NATO Phonetic Alphabet encoder",
+                              color=discord.Color.green())
+            e.add_field(name="Result: ",
+                        value=result)
+            e.set_footer(text=f"Requested by: {ctx.author}")
+            await ctx.send(embed=e)
+        except:
+            e = discord.Embed(title='Oops!',
+                              description="Sorry we couldn't encode your text :(",
+                              color=discord.Color.red())
+            await ctx.send(embed=e)
+            
     @encode.command(aliases=['oct'])
     async def octal(self, ctx, *, text):
         try:
