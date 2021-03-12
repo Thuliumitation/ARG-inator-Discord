@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import base64 as b64
 import string
-from resources import morse_dict, invmod
+from resources import morse_dict, invmod, nato_dict
 from InventWithPython import vigenereCipher, transpositionDecrypt
 import brainfuck
 
@@ -28,6 +28,7 @@ class CipherDecode(commands.Cog):
             e.add_field(name="Decimal (dec)", value='>decode dec <text>')
             e.add_field(name="Hexadecimal (hex)", value='>decode hex <text>')
             e.add_field(name="Morse Code (mc)", value='>decode morse <text>')
+            e.add_field(name="NATO Phonetic Alphabet (nato)", value=">decode nato <text>") 
             e.add_field(name="Octal (oct)", value='>decode oct <text>')
             e.add_field(name="Rot47 (r47)", value='>decode rot47 <text>')
             e.add_field(name="Monoalphabetic Substitution (mono)", value='>decode mono <text>')
@@ -225,6 +226,24 @@ class CipherDecode(commands.Cog):
             for i in text.split(" "):
                 result += list(morse_dict.keys())[list(morse_dict.values()).index(i)]
             e = discord.Embed(title="Morse Code decoder",
+                              colour=discord.Color.green())
+            e.add_field(name="Result: ",
+                        value=result)
+            e.set_footer(text=f"Requested by: {ctx.author}")
+            await ctx.send(embed=e)
+        except:
+            e = discord.Embed(title='Oops!',
+                              description="Sorry we couldn't decode your text :(",
+                              color=discord.Color.red())
+            await ctx.send(embed=e)
+            
+    @decode.command(aliases=['n'])
+    async def nato(self, ctx, *, text):
+        try:
+            result = ""
+            for i in text.split(" "):
+                result += list(nato_dict.keys())[list(nato_dict.values()).index(i)]
+            e = discord.Embed(title="NATO Phonetic Alphabet decoder",
                               colour=discord.Color.green())
             e.add_field(name="Result: ",
                         value=result)
