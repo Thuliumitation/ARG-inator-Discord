@@ -16,5 +16,4 @@ extensions = ["cipherdecode",'cipherencode','otherciphertools']
 if __name__ == "__main__":
     for ext in extensions:
         client.load_extension(ext)
-
-client.run(token)
+    client.run(token)
