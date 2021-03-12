@@ -15,14 +15,19 @@ morse_dict = {' ': '/',', ': '--..--', '.': '.-.-.-',
               '6': '-....', '7': '--...', '8': '---..',
               '9': '----.','0': '-----'}
 
-def brute_force(str_to_brute_with, str_to_crack):
-    complete_list = []
-    for current in range(2, 3):
-        a = [i for i in str_to_crack]
-        for y in range(current):
-            a = [x + i for i in str_to_brute_with for x in a]
-        complete_list += a
-    return complete_list
+nato_dict = {'A' : "Alpha",'B' : "Bravo",'C' : "Charlie",
+    'D' : "Delta",'E' : "Echo",'F' : "Foxtrot",
+    'G' : "Golf",'H' : "Hotel",'I' : "India",
+    'J' : "Juliet",'K' : "Kilo",'L' : "Lima",
+    'M' : "Mike",'N' : "November",'O' : "Oscar",
+    'P' : "Papa",'Q' : "Quebec",'R' : "Romeo",
+    'S' : "Sierra",'T' : "Tango",'U' : "Uniform",
+    'V' : "Victor",'W' : "Whisky",'X' : "X-Ray",
+    'Y' : "Yankee",'Z' : "Zulu",'0' : "Zero",
+    '1' : "One",'2' : "Two",'3' : "Three",
+    '4' : "Four",'5' : "Five",'6' : "Six",
+    '7': "Seven",'8' : "Eight",'9' : "Nine",
+    ' ': "(space)"}
 
 #Just to get the modinverse for affine cipher, gave it here cuz i mean its a resource tho
 def invmod(a, m):
