@@ -234,8 +234,8 @@ class CipherEncode(commands.Cog):
                               color=discord.Color.red())
             await ctx.send(embed=e)
             
-    @encode.command(aliases=['mc'])
-    async def morse(self, ctx, *, text):
+    @encode.command(aliases=['n'])
+    async def nato(self, ctx, *, text):
         try:
             result = ""
             for i in text.upper():
