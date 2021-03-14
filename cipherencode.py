@@ -207,7 +207,7 @@ class CipherEncode(commands.Cog):
             e = discord.Embed(title="Hexadecimal encoder",
                               color=discord.Color.green())
             e.add_field(name="Result: ",
-                        value=textwrap.wrap(result, 2))
+                        value=" ".join(textwrap.wrap(result, 2)))
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
         except:
