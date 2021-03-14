@@ -5,8 +5,6 @@ import string
 from resources import morse_dict, nato_dict
 from InventWithPython import vigenereCipher, transpositionEncrypt
 from python_to_bf import brainfrick
-import pyconverter
-import textwrap
 
 
 class CipherEncode(commands.Cog):
@@ -147,11 +145,11 @@ class CipherEncode(commands.Cog):
     @encode.command(aliases=['bin'])
     async def binary(self, ctx, *, text):
         try:
-            result = pyconverter.utf8tobin(text)
+            result = ' '.join([bin(ord(x))[2:] for x in text])
             e = discord.Embed(title="Binary encoder",
                               color=discord.Color.green())
             e.add_field(name="Result: ",
-                        value=' '.join(textwrap.wrap(result, 8)))
+                        value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
         except:
@@ -203,11 +201,11 @@ class CipherEncode(commands.Cog):
     @encode.command(aliases=['hex'])
     async def hexadecimal(self, ctx, *, text):
         try:
-            result = pyconverter.utf8tohex(text)
+            result = " ".join([hex(ord(x))[2:] for x in text])
             e = discord.Embed(title="Hexadecimal encoder",
                               color=discord.Color.green())
             e.add_field(name="Result: ",
-                        value=" ".join(textwrap.wrap(result, 2)))
+                        value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
         except:
@@ -255,11 +253,11 @@ class CipherEncode(commands.Cog):
     @encode.command(aliases=['oct'])
     async def octal(self, ctx, *, text):
         try:
-            result = pyconverter.utf8tooct(text)
+            result = ' '.join([oct(ord(x))[2:] for x in text])
             e = discord.Embed(title="Octal encoder",
                               color=discord.Color.green())
             e.add_field(name="Result: ",
-                        value=" ".join(textwrap.wrap(result, 3)))
+                        value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
         except:
