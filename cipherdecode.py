@@ -31,7 +31,7 @@ class CipherDecode(commands.Cog):
             e.add_field(name="NATO Phonetic Alphabet (nato)", value=">decode nato <text>") 
             e.add_field(name="Octal (oct)", value='>decode oct <text>')
             e.add_field(name="Rot47 (r47)", value='>decode rot47 <text>')
-            e.add_field(name="Monoalphabetic Substitution (mono)", value='>decode mono <text>')
+            e.add_field(name="Monoalphabetic Substitution (mono)", value='>decode mono <"text"> <"key">')
             e.add_field(name="Transposition (railfence)", value=">decode rf <'text'> <key>")
             e.add_field(name="Vigenère (v)", value=">decode vigenere <'text'> <'key'>")
             await ctx.send(embed=e)
