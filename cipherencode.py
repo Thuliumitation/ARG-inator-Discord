@@ -48,10 +48,12 @@ class CipherEncode(commands.Cog):
                         value=result.decode('utf-8'))
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
 
     @encode.command(aliases=['atb'])
@@ -65,12 +67,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['aff'])
     async def affine(self, ctx, text, k1: int, k2: int):
         try:
@@ -88,12 +91,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['b32'])
     async def base32(self, ctx, *, text):
         try:
@@ -104,12 +108,13 @@ class CipherEncode(commands.Cog):
                         value=result.decode('utf-8'))
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['b64'])
     async def base64(self, ctx, *, text):
         try:
@@ -120,12 +125,13 @@ class CipherEncode(commands.Cog):
                         value=result.decode('utf-8'))
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['b85'])
     async def base85(self, ctx, *, text):
         try:
@@ -136,12 +142,13 @@ class CipherEncode(commands.Cog):
                         value=result.decode('utf-8'))
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['bin'])
     async def binary(self, ctx, *, text):
         try:
@@ -152,12 +159,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['c'])
     async def caesar(self, ctx, text, key: int):
         try:
@@ -176,12 +184,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['dec'])
     async def decimal(self, ctx, *, text):
         try:
@@ -192,12 +201,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['hex'])
     async def hexadecimal(self, ctx, *, text):
         try:
@@ -208,12 +218,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['mc'])
     async def morse(self, ctx, *, text):
         try:
@@ -226,12 +237,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
-            await ctx.send(embed=e)
-            
+            e.add_field(name='Error:',
+                        value=str(ex))
+            await ctx.send(embed=e)    
     @encode.command(aliases=['n'])
     async def nato(self, ctx, *, text):
         try:
@@ -244,12 +256,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
-            await ctx.send(embed=e)
-            
+            e.add_field(name='Error:',
+                        value=str(ex))
+            await ctx.send(embed=e)    
     @encode.command(aliases=['oct'])
     async def octal(self, ctx, *, text):
         try:
@@ -260,12 +273,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
-            await ctx.send(embed=e)
-           
+            e.add_field(name='Error:',
+                        value=str(ex))
+            await ctx.send(embed=e)   
     @encode.command(aliases=['rf','railfence'])
     async def transposition(self,ctx,text,key:int):
         try:
@@ -275,12 +289,13 @@ class CipherEncode(commands.Cog):
             e.add_field(name='Result:', value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['r47'])
     async def rot47(self, ctx, *, text):
         try:
@@ -296,12 +311,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
-                              description="Sorry we couldn't decode your text :(",
+                              description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['mono'])
     async def substitution(self, ctx, text, key):
         try:
@@ -313,12 +329,13 @@ class CipherEncode(commands.Cog):
                         value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['v'])
     async def vigenere(self, ctx, text, key):
         try:
@@ -328,12 +345,13 @@ class CipherEncode(commands.Cog):
             e.add_field(name='Result:', value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @encode.command(aliases=['bf'])
     async def brainfrick(self, ctx, *, text):
         try:
@@ -343,12 +361,13 @@ class CipherEncode(commands.Cog):
             e.add_field(name='Result:', value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't encode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
 
 def setup(client):
     client.add_cog(CipherEncode(client))
