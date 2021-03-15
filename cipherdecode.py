@@ -4,7 +4,7 @@ import base64 as b64
 import string
 from resources import morse_dict, invmod, nato_dict
 from InventWithPython import vigenereCipher, transpositionDecrypt
-import brainfucki
+from python_to_bf import brainfucki
 
 
 class CipherDecode(commands.Cog):
