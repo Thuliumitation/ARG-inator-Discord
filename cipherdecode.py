@@ -4,7 +4,7 @@ import base64 as b64
 import string
 from resources import morse_dict, invmod, nato_dict
 from InventWithPython import vigenereCipher, transpositionDecrypt
-import brainfuck
+import brainfucki
 
 
 class CipherDecode(commands.Cog):
@@ -345,7 +345,7 @@ class CipherDecode(commands.Cog):
     @decode.command(aliases=['bf'])
     async def brainfrick(self, ctx, *, text):
         try:
-            result = brainfuck.to_function(text)()
+            result = brainfucki.BFInterpreter().execute(text)
             e = discord.Embed(title="BrainFuck decoder",
                               colour=discord.Color.green())
             e.add_field(name='Result:', value=result)
