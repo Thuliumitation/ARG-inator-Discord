@@ -12,7 +12,7 @@ async def on_ready():
     
 @client.command()
 async def ping(ctx):
-    await ctx.send(f'Pong: {round(client.latency, 1)}')
+    await ctx.send(f'Pong: {round(client.latency)}')
 
 extensions = ["cipherdecode",'cipherencode','otherciphertools']
 
