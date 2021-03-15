@@ -47,10 +47,12 @@ class CipherDecode(commands.Cog):
                         value=b64.a85decode(text).decode('utf-8'))
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
 
     @decode.command(aliases=['atb'])
@@ -64,10 +66,12 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
 
     @decode.command(aliases=['aff'])
@@ -87,12 +91,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['b32'])
     async def base32(self, ctx, *, text):
         try:
@@ -103,12 +108,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['b64'])
     async def base64(self, ctx, *, text):
         try:
@@ -119,12 +125,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['b85'])
     async def base85(self, ctx, *, text):
         try:
@@ -135,12 +142,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['bin'])
     async def binary(self, ctx, *, text):
         try:
@@ -153,12 +161,13 @@ class CipherDecode(commands.Cog):
                         value=ascii_string)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['c'])
     async def caesar(self, ctx, text, key: int):
         try:
@@ -177,12 +186,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['dec'])
     async def decimal(self, ctx, *, text):
         try:
@@ -195,12 +205,13 @@ class CipherDecode(commands.Cog):
                         value=ascii_string)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['hex'])
     async def hexadecimal(self, ctx, *, text):
         try:
@@ -213,12 +224,13 @@ class CipherDecode(commands.Cog):
                         value=ascii_string)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['mc'])
     async def morse(self, ctx, *, text):
         try:
@@ -231,12 +243,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
-            await ctx.send(embed=e)
-            
+            e.add_field(name='Error:',
+                        value=str(ex))
+            await ctx.send(embed=e)    
     @decode.command(aliases=['n'])
     async def nato(self, ctx, *, text):
         try:
@@ -249,12 +262,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['oct'])
     async def octal(self, ctx, *, text):
         try:
@@ -267,12 +281,13 @@ class CipherDecode(commands.Cog):
                         value=ascii_string)
             e.set_footer(text=f"Requested by: {ctx.author}")
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-    
     @decode.command(aliases=['rf','railfence'])
     async def transposition(self,ctx,text,key:int):
         try:
@@ -282,12 +297,13 @@ class CipherDecode(commands.Cog):
             e.add_field(name='Result:', value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-    
     @decode.command(aliases=['r47'])
     async def rot47(self, ctx, *, text):
         try:
@@ -304,12 +320,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['mono'])
     async def substitution(self, ctx, text, key):
         try:
@@ -321,12 +338,13 @@ class CipherDecode(commands.Cog):
                         value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['v'])
     async def vigenere(self, ctx, text, key):
         try:
@@ -336,12 +354,13 @@ class CipherDecode(commands.Cog):
             e.add_field(name='Result:', value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
     @decode.command(aliases=['bf'])
     async def brainfrick(self, ctx, *, text):
         try:
@@ -351,12 +370,13 @@ class CipherDecode(commands.Cog):
             e.add_field(name='Result:', value=result)
             e.set_footer(text=f'Requested by: {ctx.author}')
             await ctx.send(embed=e)
-        except:
+        except Exception as ex:
             e = discord.Embed(title='Oops!',
                               description="Sorry we couldn't decode your text :(",
                               color=discord.Color.red())
+            e.add_field(name='Error:',
+                        value=str(ex))
             await ctx.send(embed=e)
-
 
 def setup(client):
     client.add_cog(CipherDecode(client))
