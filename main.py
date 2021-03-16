@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('TOKEN')
-client = commands.Bot(command_prefix='>',intents=discord.Intents.all(),help_command=None)
+client = commands.Bot(command_prefix=commands.when_mentioned_or(">"),intents=discord.Intents.all(),help_command=None)
 
 @client.event
 async def on_ready():
